@@ -1,0 +1,14 @@
+{% extends "lelycanindexBundle:index:pattern.html.twig" %}
+{%block title%}{{titre}} | {{projet.nom}}{%endblock%}
+{%block titre%}{{titre}}{%endblock%}
+{%block body%}
+<div class="titre">
+<h3>{{titre}}<img src="{{ asset('images/h1-right.png') }}" class="titreRight"/></h3>
+<img src="{{ asset('images/replis-titre.png') }}" class="TitreReplis"/>
+</div>
+<form method="post" {{form_enctype(form)}} class="tinymce">
+    {{form_widget(form)}}
+    <div><input type="submit" value="Valider"/></div>
+</form>
+{%endblock%}
+{%block footer%}Baptiste Saclier - Tout drois réservé{%endblock%}

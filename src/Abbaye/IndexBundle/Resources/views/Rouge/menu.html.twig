@@ -1,0 +1,7 @@
+			<nav class="span2">
+				<ul>
+  {% for article in listeArticles %}
+					<li id="rouge"><a href="{{ path('Agence',{'agence' : article.permalien}) }}">{{ article.nom }}</a></li>
+  {% endfor %}
+				
+			</nav>

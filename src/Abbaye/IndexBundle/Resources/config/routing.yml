@@ -1,0 +1,43 @@
+Acceuil:
+    pattern:  /
+    defaults: {_controller: AbbayeIndexBundle:Index:index }
+Agence:
+    pattern:  /vitrine/{agence}
+    defaults: {_controller: AbbayeIndexBundle:Index:agence }
+Tarif:
+    pattern:  /vitrine/{agence}/{tarif}
+    defaults: {_controller: AbbayeIndexBundle:Index:tarif }
+
+SafetyGenerate:
+    pattern:  /vitrine/NoDefault/Generate/Agence
+    defaults: {_controller: AbbayeIndexBundle:Index:safety }
+    
+Flashnews:
+    pattern:  /flashnews
+    defaults: {_controller: AbbayeIndexBundle:Index:afficherflashnews }
+
+#Administration
+
+AdminAffichage:
+    pattern:  /!/admin
+    defaults: {_controller: AbbayeIndexBundle:Admin:affichage }
+    
+AdminFlashNews:
+    pattern:  /!/admin/flashnews
+    defaults: {_controller: AbbayeIndexBundle:Admin:FlashNews }
+    
+AdminAfficher:
+    pattern:  /!/admin/{type}/afficher/{id}
+    defaults: {_controller: AbbayeIndexBundle:Admin:afficher }
+    
+AdminCreer:
+    pattern:  /!/admin/{type}/creer/{id}
+    defaults: {_controller: AbbayeIndexBundle:Admin:creer }
+    
+AdminModifier:
+    pattern:  /!/admin/{type}/modifier/{id}
+    defaults: {_controller: AbbayeIndexBundle:Admin:modifier }
+    
+AdminSupprimer:
+    pattern:  /!/admin/{type}/suprimmer/{id}
+    defaults: {_controller: AbbayeIndexBundle:Admin:supprimer }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>FlashNews</title>
+		<link href="{{ asset('css/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+		<link href="{{ asset('css/rouge/rouge.css') }}" rel="stylesheet" type="text/css">
+		
+    </head>
+ 
+    <body>
+		<header class="row-fluid">
+			<div class="span2" id="logo">
+				<img class="queue" src="{{ asset('css/rouge/img/journal.png') }}"/>
+			</div>
+			<div class="span10" id="slogan">
+				<h1>Flashnews</h1>
+			</div>
+		</header>
+		<section class="row-fluid">
+			{{render(controller('AbbayeIndexBundle:Index:menu'))}}
+			<div class="span10" id="content">
+			{% for flashnew in flashnews %}
+				<div class="FlashNew {% if flashnew.Important %}important{%endif%} affichage">
+				<p>{{flashnew.Contenu}}</p>
+				<div class="date">{{flashnew.Date | date("d/m/Y")}}</div>
+				</div>
+				{% if flashnew.Important %}<img class="queue" src="{{ asset('css/rouge/img/queue-important.png') }}"/>{%else%}<img class="queue" src="{{ asset('css/rouge/img/queue.png') }}"/>{%endif%}
+				{%endfor%}
+			</div>
+		</section>
+		<footer class="row-fluid">
+		<!--Webmaster : Baptiste Saclier 2013<br/>-->
+		Site web obtimisé pour <a href="http://www.google.fr/intl/fr/chrome/browser/">Google Chrome</a><br/>
+		<a href="{{ path('AdminAffichage') }}">Administration</a>
+		</footer>
+				<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+				<script>
+				  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+				  ga('create', 'UA-42127604-1', 'autoecoledelabbaye.com');
+				  ga('send', 'pageview');
+
+				</script>
+    </body>
+</html>

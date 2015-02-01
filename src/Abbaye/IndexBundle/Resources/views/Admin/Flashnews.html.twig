@@ -1,0 +1,14 @@
+{% extends "AbbayeIndexBundle:Admin:Index.html.twig" %}
+{% block titre %}Agences - Administration{% endblock %}
+{% block soustitre %}Affichage des Agences{% endblock %}
+{% block body %}
+</ul>
+</nav>
+<article class="span9">
+<table id="tableau">
+<tr><td>Id</td><td>Contenu</td><td>Date</td><td>Supprimer</td></tr>
+{% for content in contenu %}
+<tr><td>{{content.id}}</td><td>{{content.contenu}}</td><td>{{content.date|date('d/m/Y')}}</td><td><a href="{{ path('AdminSupprimer',{'type' : 'flashnew','id': content.id}) }}">Supprimer</a></td></tr>
+{% endfor %}
+</table>
+{% endblock %}

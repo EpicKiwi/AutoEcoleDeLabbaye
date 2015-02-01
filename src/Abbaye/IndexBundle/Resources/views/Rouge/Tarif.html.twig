@@ -1,0 +1,17 @@
+{% extends "AbbayeIndexBundle:Rouge:Index.html.twig" %}
+{% block titre %}{{ Tarif.nom }} - {{ Agence.nom }}{% endblock %}
+{% block body %}
+			<div class="span7" id="content">
+				<div id="info">
+				<h3>{{Tarif.nom}}</h3>
+				<ul>
+				{{Tarif.contenu|raw}}
+				</ul>
+				<h4>Prix : {{Tarif.prix}}€</h4>
+				</div>
+				<div id="description">
+				{{ Tarif.description|raw }}
+				</div>
+				<h4>Par : {{Agence.nom}}</h4>
+			</div>
+{% endblock %}

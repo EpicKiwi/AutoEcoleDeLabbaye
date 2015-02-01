@@ -1,0 +1,13 @@
+abbaye_index:
+    resource: "@AbbayeIndexBundle/Resources/config/routing.yml"
+    prefix:   /
+
+login:
+    pattern:  /connection
+    defaults: { _controller: AbbayeUserBundle:Security:login }
+    
+loginCheck:
+    pattern:  /check
+    
+logout:
+    pattern:  /deconnection

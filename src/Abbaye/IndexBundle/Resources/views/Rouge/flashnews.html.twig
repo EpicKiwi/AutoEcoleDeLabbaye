@@ -1,0 +1,11 @@
+<aside id="flashNews">
+<h3>Flash News</h3>
+{% for flashnew in flashnews %}
+<div class="FlashNew {% if flashnew.Important %}important{%endif%}">
+<p>{{flashnew.Contenu}}</p>
+<div class="date">{{flashnew.Date | date("d/m/Y")}}</div>
+</div>
+{% if flashnew.Important %}<img class="queue" src="{{ asset('css/rouge/img/queue-important.png') }}"/>{%else%}<img class="queue" src="{{ asset('css/rouge/img/queue.png') }}"/>{%endif%}
+{%endfor%}
+<a href="{{ path('Flashnews') }}" id="more"><img class="queue" src="{{ asset('css/rouge/img/more.png') }}"/></a>
+</aside>

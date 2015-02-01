@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% block title %}Projet{% endblock %}</title>
+		<link rel="stylesheet" href="{{ asset('css/global.css') }}"/>
+                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+                <script type="text/javascript" src="{{ asset('js/tinymce/js/tinymce/tinymce.min.js') }}"></script>
+                <script type="text/javascript">
+                tinymce.init({
+                    selector: ".tinymce textarea",
+                    language : 'fr_FR'
+                 });
+                </script>
+	</head>
+	<body>
+		<header>
+			<h1>{% block titre %}Projet{% endblock %}</h1>
+		</header>
+		<section>
+			<article>
+                            {% block body %}{% endblock %}
+			</article>
+		</section>
+		<footer>
+			<div id="hidder"></div>
+                        {% block ajouterFichier %}{% if is_granted('ROLE_USER') %}<div class="ajoutFichier"><a href="{{path("ajouterFichier",{'id':projet.id})}}" class="bouton">Nouveau fichier</a></div>{% endif %}{% endblock %}
+                        {% if is_granted('ROLE_USER') %}<div class="ajoutFichier"><a href="{{path("logout")}}" class="bouton">Déconnection</a></div>{% else %}<div class="ajoutFichier"><a href="{{path("login")}}" class="bouton">Connection</a></div>{% endif %}
+						<a href="#" id="verAfficher" class="bouton">Boite à outils</a>
+                        {% block footer %}{% endblock %}<br/>
+                        <script> 
+                            $(function(){
+                            $('#verAfficher').click(function(){
+                            event.preventDefault();
+                            $('.version').fadeToggle();
+                            $('.ajoutFichier').fadeToggle();
+                            $('.croix').fadeToggle();
+                            $('.editerDescription').fadeToggle();
+                            });
+                            $('.commentaire h4').click(function(){
+                                $('.commentaire form').slideToggle();
+                            });
+                            });
+                        </script>
+		</footer>
+	</body>
+</html>

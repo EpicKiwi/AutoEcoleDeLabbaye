@@ -1,0 +1,24 @@
+{% extends "AbbayeIndexBundle:Admin:Index.html.twig" %}
+{% block titre %}{{Tarif.nom}} - Administration{% endblock %}
+{% block soustitre %}Affichage du tarif {{Tarif.nom}}{% endblock %}
+{% block body %}
+<br/>
+<li id="orange"><a href="{{ path('AdminSupprimer',{'type' : 'tarif','id': Tarif.id}) }}">Supprimer</a></li>
+<li id="orange"><a href="{{ path('AdminModifier',{'type' : 'tarif','id': Tarif.id}) }}">Modifier</a></li>
+</ul>
+</nav>
+<article class="span9">
+<h2>Présentation</h2>
+<table id="presentation">
+<tr><td>Id</td><td>{{Tarif.id}}</td></tr>
+<tr><td>Nom</td><td>{{Tarif.nom}}</td></tr>
+<tr><td>Contenu</td><td>{{Tarif.contenu|raw}}</td></tr>
+<tr><td>Prix</td><td>{{Tarif.prix}}€</td></tr>
+<tr><td>Date de création</td><td>{{Tarif.date|date("d/m/Y")}}</td></tr>
+<tr><td>Agence</td><td>{{Agence.Nom}}</td></tr>
+</table>
+<h2>Déscription</h2>
+<div id="description">
+{{Tarif.description|raw}}
+</div>
+{% endblock %}

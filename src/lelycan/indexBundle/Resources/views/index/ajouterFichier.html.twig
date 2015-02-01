@@ -1,0 +1,27 @@
+{% extends "lelycanindexBundle:index:pattern.html.twig" %}
+{%block title%}{{titre}} | {{projet.nom}}{%endblock%}
+{%block titre%}{{titre}}{%endblock%}
+{%block body%}
+<div class="titre">
+<h3>{{titre}}<img src="{{ asset('images/h1-right.png') }}" class="titreRight"/></h3>
+<img src="{{ asset('images/replis-titre.png') }}" class="TitreReplis"/>
+</div>
+<form method="post" {{form_enctype(form)}}>
+    {{form_widget(form)}}
+    <div><input type="submit" value="Valider"/></div>
+    <br/>
+    <br/>
+    <table class="extentions">
+    <tr><td>Type de fichier</td><td>A mettre dans le champ type</td></tr>
+    <tr><td>Document Word 2007</td><td>docx</td></tr>
+    <tr><td>Document PowerPoint 2007</td><td>pptx</td></tr>
+    <tr><td>Document Publisher</td><td>pub</td></tr>
+    <tr><td>Image PNG</td><td>png</td></tr>
+    <tr><td>Image JPEG</td><td>jpg</td></tr>
+    <tr><td>Image GIF</td><td>gif</td></tr>
+    <tr><td>Image BMP</td><td>bmp</td></tr>
+    <tr><td>Si vous ne savez pas</td><td>unk</td></tr>
+    </table>
+</form>
+{%endblock%}
+{%block footer%}Baptiste Saclier - Tout drois réservé{%endblock%}

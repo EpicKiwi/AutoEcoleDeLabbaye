@@ -1,0 +1,19 @@
+{% extends "AbbayeIndexBundle:Admin:Index.html.twig" %}
+{% block titre %}Agences - Administration{% endblock %}
+{% block soustitre %}Affichage des Agences{% endblock %}
+{% block body %}
+</ul>
+</nav>
+<article class="span9 flashnew"> 
+<h3>Flash New{% if publie == true%} publiée !{%endif%}</h3>
+<form method="post" {{ form_enctype(form) }}>
+{{ form_widget(form) }} <input type="submit" />
+</form></article>
+<article class="span9">
+<table id="tableau">
+<tr><td>Id</td><td>Nom</td><td>Par defaut</td><td>Afficher</td><td>Modifier</td><td>Supprimer</td></tr>
+{% for content in contenu %}
+<tr><td>{{content.id}}</td><td>{{content.nom}}</td><td>{% if content.defaut %}<img src="{{ asset('css/Admin/oui.png') }}"/>{% else %}<img src="{{ asset('css/Admin/non.png') }}"/>{% endif %}</td><td><a href="{{ path('AdminAfficher',{'type' : 'agence','id': content.id}) }}">Afficher</a></td><td><a href="{{ path('AdminModifier',{'type' : 'agence','id': content.id}) }}">Modifier</a></td><td><a href="{{ path('AdminSupprimer',{'type' : 'agence','id': content.id}) }}">Supprimer</a></td></tr>
+{% endfor %}
+</table>
+{% endblock %}

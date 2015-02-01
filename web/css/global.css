@@ -1,0 +1,415 @@
+/*Couleurs
+ *#549BFF
+ *#3765A7
+ */
+
+*
+{
+	margin:				0px;
+	padding:			0px;
+	z-index:			0;
+	font-family:                    arial;
+}
+
+header
+{
+	text-align:			center;
+	font-family:                    "arial black";
+	font-size:			xx-large;
+	color:				#2374C1;
+	text-shadow:                    #5F91BF 1px 1px px;
+	top:				0px;
+	margin-bottom:                  -25px;
+	position:			relative;
+	z-index:			0;
+	
+	transition-duration:            0.5s;
+	transition-property:            all;
+	-webkit-transition-duration:    0.5s;
+	-webkit-transition-property:    all;
+}
+
+header:hover
+{
+	top:				-10px;
+}
+
+section
+{
+	width:				80%;
+	margin-left:                    auto;
+	margin-right:                   auto;
+	padding-bottom:                 20px;
+	border:				5px solid white;
+	padding:			5px;
+	position:			relative;
+	z-index:			10;
+	
+	box-shadow:			black 0px 0px 15px;
+}
+/*Contenu section*/
+article h3
+{
+	color:				#3765a7;
+}
+
+footer
+{
+	min-height:				100px;
+	
+	box-shadow:			black 0px 0px 15px;
+	position:			relative;
+	z-index:			10;
+	border-bottom:			5px solid white;
+	border-top:			5px solid white;
+        text-align:                     center;
+}
+
+section , footer , body , #hidder
+{
+	background-image:               url("../images/background.png");
+}
+
+#hidder
+{
+	height:				15px;
+	width:				80%;
+	margin-left:                    auto;
+	margin-right:                   auto;
+	position:			relative;
+	top:				-15px;
+	border-left:                    5px solid white;
+	border-right:                   5px solid white;
+	padding-left:                   5px;
+	padding-right:                  5px;
+	position:			relative;
+	z-index:			11;
+}
+
+.titre
+{
+	margin-top:			5px;
+	margin-bottom:			5px;
+	position:			relative;
+	left:				-42px;
+	width:				30%;
+	height:				32px;
+	
+	transition-duration:            0.1s;
+	transition-property:            all;
+	-webkit-transition-duration:    0.1s;
+	-webkit-transition-property:    all;
+}
+
+.titre:hover
+{
+	width:				50%;
+}
+
+.titre h3
+{
+	background:                     linear-gradient(to bottom, #549bff 0%,#3765a7 100%);
+	font-family:                    "arial black";
+	color:				white;
+	font-size:			23px;
+	padding-left:                   10%;
+}
+
+.titreRight
+{
+	float:				right;
+	margin-right:                   -32px;
+}
+
+/*Fichiers*/
+
+.fichier
+{
+        border-top:                     2px white groove;
+        padding-top:                    30px;
+}
+
+.fichier:nth-child(1)
+{
+        border-top:                     none !important;
+        padding-top:                    0px;
+}
+
+.description
+{
+	width:				50%;
+	display:			inline-block;
+	vertical-align:                 top;
+	margin-left:                    10%;
+}
+
+.icone
+{
+	width:				19.5%;
+	display:			inline-block;
+	box-shadow:			0px 0px 15px black inset;
+	height:				130px;
+	background:                     linear-gradient(to bottom, #549bff 0%,#3765a7 100%);
+	text-align:			center;
+	margin-left:                    10%;
+	border:				5px solid white;
+	
+	transition-duration:            1s;
+	transition-property:            all;
+	-webkit-transition-duration:    1s;
+	-webkit-transition-property:    all;
+}
+
+.icone:hover
+{
+	box-shadow:			0px 0px 0px black inset;
+}
+
+.telecharger
+{
+        float:                          right;
+	transition-duration:            0.5s;
+	transition-property:            all;
+	-webkit-transition-duration:    0.5s;
+	-webkit-transition-property:    all;
+        
+        position: relative;
+        top:                            0px;
+}
+
+.croix
+{
+        display:                        none;
+}
+
+.version:nth-child(4), .version:nth-child(5), .version:nth-child(6)
+{
+    display:                            table-row !important;
+    opacity:                            1 !important;
+}
+
+.version
+{
+    display:                            none;
+}
+
+.telecharger:hover
+{
+        top:                            5px;
+}
+
+.fichier
+{
+	margin-top:			20px;
+	margin-bottom:			20px;
+}
+
+.description tr
+{
+	width:				100%;
+}
+
+.description td:nth-child(1)
+{
+	font-family:                    "arial black";
+}
+
+.miseAjour
+{
+	margin-top:			-150px;
+	position:			relative;
+	left:				42px;
+	width:				20%;
+	height:				32px;
+	
+	transition-duration:            0.1s;
+	transition-property:            all;
+	-webkit-transition-duration:    0.1s;
+	-webkit-transition-property:    all;
+        float:                          right;
+}
+
+.miseAjour:hover
+{
+	width:				25%;
+}
+
+.miseAjour h6
+{
+	background:                     linear-gradient(to bottom, #549bff 0%,#3765a7 100%);
+	height:				32px;
+}
+
+.miseAjour a
+{
+	font-family:                    "arial";
+	color:				white;
+	font-size:			20px;
+        display:                        block;
+        text-decoration:                none;
+        position:                       relative;
+        top:                            -30px;
+}
+
+.miseAjourLeft
+{
+        position:                           relative;
+        left:                               -32px;
+}
+
+.miseAjourReplis
+{
+	float:				right;
+}
+
+.bouton
+{
+        width:                          30%;
+        height:                         32px;
+	background:                     linear-gradient(to bottom, #549bff 0%,#3765a7 100%);
+	box-shadow:			0px 0px 15px black inset;
+	font-family:                    "arial black";
+	color:				white;
+	border:				5px solid white;
+        display:                        block;
+        margin-left:                    auto;
+        margin-right:                   auto;
+        font-size:                      20px;
+        text-decoration:                none;
+        margin-bottom:                  10px;
+	
+	transition-duration:            0.3s;
+	transition-property:            all;
+	-webkit-transition-duration:    0.3s;
+	-webkit-transition-property:    all;
+}
+
+.bouton:hover
+{
+	box-shadow:			0px 0px 0px black inset;
+}
+
+/*formulaires*/
+form
+{
+        margin-top:                     50px;
+        margin-bottom:                  20px;
+        margin-left:                    auto;
+        margin-right:                    auto;
+        width:                          60%;
+}
+
+form div
+{
+        margin-top:                     10px;
+}
+
+label
+{
+        margin-right:                   20px;
+}
+
+textarea
+{
+        width:                          100%;
+        height:                         300px;
+}
+
+input[type="submit"]
+{
+        width:                          100%;
+        height:                         47px;
+	background:                     linear-gradient(to bottom, #549bff 0%,#3765a7 100%);
+	box-shadow:			0px 0px 15px black inset;
+	font-family:                    "arial black";
+	color:				white;
+	border:				5px solid white;
+	
+	transition-duration:            0.3s;
+	transition-property:            all;
+	-webkit-transition-duration:    0.3s;
+	-webkit-transition-property:    all;
+}
+
+input[type="submit"]:hover
+{
+	box-shadow:			0px 0px 0px black inset;
+}
+
+input[type="submit"]:active
+{
+	box-shadow:			0px 0px 30px black inset;
+}
+
+.supprimer
+{
+	background:                     linear-gradient(to bottom, #FF0000 0%,#B20000 100%);
+}
+
+.editerDescription
+{
+        display:                        none;
+        float:                          right;
+}
+.ajoutFichier
+{
+        display:                        none;
+}
+
+.extentions
+{
+        text-align:                     center;
+        margin-left:                    auto;
+        margin-right:                   auto;
+}
+
+.extentions td:nth-child(1)
+{
+        text-align:                     right;
+        padding-right:                  5px;
+        border-right:                   groove 2px white;
+        border-collapse:                collapse;
+}
+
+.extentions td:nth-child(1)
+{
+        padding-left:                  5px;
+}
+
+.commentaire   
+{
+        width:                         80%;
+        margin-left:                    auto;
+        margin-right:                   auto;
+	background:                     linear-gradient(to bottom, #549bff 0%,#3765a7 100%);
+        color:                          white;
+        padding:                        20px;
+        margin-bottom:                  20px;
+        margin-top:                     15px;
+	border:				5px solid white;
+	box-shadow:			0px 0px 15px black inset;
+	
+	transition-duration:            0.3s;
+	transition-property:            all;
+	-webkit-transition-duration:    0.3s;
+	-webkit-transition-property:    all;
+}
+
+.commentaire:hover
+{
+	box-shadow:			0px 0px 0px black inset;
+}
+
+.commentaire form
+{
+        margin-top:                     0px;
+        margin-bottom:                  0px;
+        width:                          100%;
+        display:                        none;
+}
+
+.commentaire h4
+{
+        font-size:                      20pt;
+        cursor:                         pointer;
+}

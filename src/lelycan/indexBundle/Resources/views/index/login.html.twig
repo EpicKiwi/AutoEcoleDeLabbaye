@@ -1,0 +1,20 @@
+{% extends "lelycanindexBundle:index:pattern.html.twig" %}
+{%block title%}Connection{%endblock%}
+{%block titre%}Connection{%endblock%}
+{%block body%}
+<div class="titre">
+<h3>Connection<img src="{{ asset('images/h1-right.png') }}" class="titreRight"/></h3>
+<img src="{{ asset('images/replis-titre.png') }}" class="TitreReplis"/>
+</div>
+  <form action="{{ path('login-check') }}" method="post">
+    <label for="username">Login :</label>
+    <input type="text" id="username" name="_username" value="{{ last_username }}" />
+ 
+    <label for="password">Mot de passe :</label>
+    <input type="password" id="password" name="_password" />
+    <br />
+    <input type="submit" value="Connexion" />
+  </form>
+{%endblock%}
+{%block footer%}Baptiste Saclier{%endblock%}
+{% block ajouterFichier %} {% endblock %}

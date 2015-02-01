@@ -1,0 +1,21 @@
+{% extends "AbbayeIndexBundle:Rouge:Index.html.twig" %}
+{% block titre %}{{ Agence.Nom }}{% endblock %}
+{% block body %}
+			<div class="span7" id="content">
+				{% if Tarifs != NULL %}
+				  {% for Tarif in Tarifs %}
+				<div class="tarif">
+					<h3>{{Tarif.nom}}</h3>
+					<ul>
+						{{Tarif.contenu|raw}}
+					</ul>
+					<div class="prix">{{Tarif.prix}}€</div>
+					<div class="savoir"><a href="{{ path('Tarif', { 'agence': Agence.permalien, 'tarif': Tarif.permalien }) }}">En savoir plus</a></div>
+				</div>
+				  {% endfor %}
+				{% endif %}
+				<div id="description">
+				{{ Agence.description|raw }}
+				</div>
+			</div>
+{% endblock %}

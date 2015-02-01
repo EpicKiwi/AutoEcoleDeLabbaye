@@ -1,0 +1,34 @@
+{% extends "AbbayeIndexBundle:Admin:Index.html.twig" %}
+{% block titre %}{{Agence.nom}} - Administration{% endblock %}
+{% block soustitre %}Affichage de l'agence {{Agence.nom}}{% endblock %}
+{% block body %}
+<br/>
+<li id="orange"><a href="{{ path('AdminSupprimer',{'type' : 'agence','id': Agence.id}) }}">Supprimer</a></li>
+<li id="orange"><a href="{{ path('AdminModifier',{'type' : 'agence','id': Agence.id}) }}">Modifier</a></li>
+</ul>
+</nav>
+<article class="span9">
+<h2>Présentation</h2>
+<table id="presentation">
+<tr><td>Id</td><td>{{Agence.id}}</td></tr>
+<tr><td>Par defaut</td><td>{% if Agence.defaut %}<img src="{{ asset('css/Admin/oui.png') }}"/>{% else %}<img src="{{ asset('css/Admin/non.png') }}"/>{% endif %}</td></tr>
+<tr><td>Nom</td><td>{{Agence.nom}}</td></tr>
+<tr><td>Date de création</td><td>{{Agence.date|date("d/m/Y")}}</td></tr>
+<tr><td>Téléphone</td><td>{{Agence.tel}}</td></tr>
+<tr><td>Fax</td><td>{{Agence.fax}}</td></tr>
+<tr><td>Adresse</td><td>{{Agence.adresse}}</td></tr>
+<tr><td>Email</td><td>{{Agence.email}}</td></tr>
+<tr><td>Logo</td><td id="logoadmin" ><img src="{{ asset( Agence.logo ) }}" alt="L'abbaye"/></td></tr>
+</table>
+<h2>Tarifs</h2>
+<table id="tableau">
+<tr><td>Id</td><td>Nom</td><td>Afficher</td><td>Modifier</td><td>Supprimer</td></tr>
+{% for tarif in Tarifs %}
+<tr><td>{{tarif.id}}</td><td>{{tarif.nom}}</td><td><a href="{{ path('AdminAfficher',{'type' : 'tarif','id': tarif.id}) }}">Afficher</a></td><td><a href="{{ path('AdminModifier',{'type' : 'tarif','id': tarif.id}) }}">Modifier</a></td><td><a href="{{ path('AdminSupprimer',{'type' : 'tarif','id': tarif.id}) }}">Supprimer</a></td></tr>
+{% endfor %}
+</table>
+<h2>Déscription</h2>
+<div id="description">
+{{Agence.description|raw}}
+</div>
+{% endblock %}

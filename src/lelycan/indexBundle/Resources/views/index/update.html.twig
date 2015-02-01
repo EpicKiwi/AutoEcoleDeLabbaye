@@ -1,0 +1,35 @@
+{% extends "lelycanindexBundle:index:pattern.html.twig" %}
+{%block title%}{{fichier.nom}} | {{projet.nom}}{%endblock%}
+{%block titre%}Mettre a jour {{fichier.nom}}{%endblock%}
+{%block body%}
+<div class="titre">
+<h3>Mettre a jour le fichier<img src="{{ asset('images/h1-right.png') }}" class="titreRight"/></h3>
+<img src="{{ asset('images/replis-titre.png') }}" class="TitreReplis"/>
+</div>
+<form method="post" {{form_enctype(form)}} class="tinymce">
+    {{form_widget(form)}}
+    <div><input type="submit" value="Envoyer"/></div>
+</form>
+<div class="titre">
+<h3>Infos sur le fichier<img src="{{ asset('images/h1-right.png') }}" class="titreRight"/></h3>
+<img src="{{ asset('images/replis-titre.png') }}" class="TitreReplis"/>
+</div>
+<div>
+				<div class="fichier">
+				<div class="icone">
+				<img src="{{ asset('images/icones/'~fichier.type~'.png') }}"/>
+				</div>
+				<table class="description">
+				<tr><td>Nom</td><td>{{fichier.nom}}</td></tr>
+                                <tr><td>Type</td><td>{{fichier.type|upper}}</td></tr>
+                                <tr><td>Date de création</td><td>{{fichier.date|date('d/m/y')}}</td></tr>
+                                {% for version in fichier.uploads %}
+                                <tr class="version"><td>Date de modification</td><td>{{version.date|date('d/m/y')}}</td></tr>
+				<tr class="version"><td>Modifications apportés</td><td>{{version.description|raw}}</td></tr>
+                                <tr class="version"><td class="telecharger"><a href="{{ asset('uploads/'~version.nom) }}"><img src="{{ asset('images/download.png') }}" alt="télécharger"/></a></td></tr>
+                                {% endfor %}
+				</table>
+				</div>
+        </div>
+{%endblock%}
+{%block footer%}Baptiste Saclier - Tout drois réservé{%endblock%}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block titre %}Connection{% endblock %}</title>
+		<link href="{{ asset('css/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+		<link href="{{ asset('css/rouge/rouge.css') }}" rel="stylesheet" type="text/css">
+		<style>
+		tr
+		{
+		border: solid black 1px;
+		}
+		td
+		{
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: 15px;
+		padding-right: 15px;
+		}
+		#tableau
+		{
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		}
+		#presentation
+		{
+		width: 50%;
+		margin-bottom: 50px;
+		}
+		#presentation tr
+		{
+		border: none;
+		}
+		#logo
+		{
+		background-color: red;
+		}
+		nav
+		{
+		height: 100%;
+		}
+		#description
+		{
+		width:80%;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: justify;
+		}
+		
+		article
+		{
+		margin-left: auto;
+		margin-right: auto;
+		width: 215px;
+		}
+		</style>
+    </head>
+ 
+    <body>
+		<header class="row-fluid">
+			<h2 class="span4" id="slogan" style="padding-left:5%;">
+				{% block soustitre %}Connection{% endblock %}
+			</h2>
+		</header>
+		<section class="row-fluid">
+			{% block body %}
+			<h3>Heuuu ... Il n'y a rien !</h3>
+			{% endblock %}
+		</section>
+		<footer class="row-fluid">
+		Baptiste Saclier 2013<br/>
+		Site web obtimisé pour <a href="http://www.google.fr/intl/fr/chrome/browser/">Google Chrome</a><br/>
+		<a href="{{ path('Acceuil')}}">Acceuil du site</a>
+		</footer>
+    </body>
+</html>

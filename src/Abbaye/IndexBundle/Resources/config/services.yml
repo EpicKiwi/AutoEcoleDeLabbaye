@@ -1,0 +1,7 @@
+parameters:
+#    abbaye_index.example.class: Abbaye\IndexBundle\Example
+
+services:
+#    abbaye_index.example:
+#        class: %abbaye_index.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,38 @@
+index:
+    pattern:  /
+    defaults: { _controller: lelycanindexBundle:Default:index }
+    
+projet:
+    pattern:  /projet/{id}
+    defaults: { _controller: lelycanindexBundle:Default:projet }
+    
+mettreAjour:
+    pattern:  /espace-utilisateur/projet/{id}/mettre-a-jour/fichier/{fichierId}
+    defaults: { _controller: lelycanindexBundle:Default:mettreAjour }
+
+supprimer:
+    pattern:  /espace-utilisateur/projet/{id}/supprimer/mise-a-jour/{updateId}
+    defaults: { _controller: lelycanindexBundle:Default:supprimer }
+    
+descriptionEdit:
+    pattern:  /espace-utilisateur/projet/{id}/editer-description
+    defaults: { _controller: lelycanindexBundle:Default:editerDescription }
+    
+ajouterFichier:
+    pattern:  /espace-utilisateur/projet/{id}/ajouter-fichier
+    defaults: { _controller: lelycanindexBundle:Default:ajouterFichier}
+    
+ajouterCommentaire:
+    pattern:  /projet/{id}/ajouter-commentaire
+    defaults: { _controller: lelycanindexBundle:Default:ajouterCommentaire}
+    
+   
+login:
+    pattern:  /login
+    defaults: { _controller: lelycanindexBundle:Default:login}
+
+login-check:
+    pattern:  /login/check
+
+logout:
+    pattern:  /logout

@@ -1,0 +1,15 @@
+{% extends "lelycanindexBundle:index:pattern.html.twig" %}
+{%block title%}supprimer | {{projet.nom}}{%endblock%}
+{%block titre%}Supprimer{%endblock%}
+{%block body%}
+<div class="titre">
+<h3>Supprimer la mise a jour<img src="{{ asset('images/h1-right.png') }}" class="titreRight"/></h3>
+<img src="{{ asset('images/replis-titre.png') }}" class="TitreReplis"/>
+</div>
+<form method="post" {{form_enctype(form)}}>
+    <p>Voulez vous vraiment supprimer la mise a jour du {{upload.date|date('d/m/y')}}</p>
+    {{form_widget(form)}}
+    <div><input type="submit" class="supprimer" value="Supprimer"/></div>
+</form>
+{%endblock%}
+{%block footer%}Baptiste Saclier - Tout drois réservé{%endblock%}

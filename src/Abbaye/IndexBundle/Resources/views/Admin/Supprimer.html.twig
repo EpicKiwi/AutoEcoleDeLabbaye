@@ -1,0 +1,16 @@
+{% extends "AbbayeIndexBundle:Admin:Index.html.twig" %}
+{% block titre %}{{type}}s - Administration{% endblock %}
+{% block soustitre %}Affichage des {{type}}s{% endblock %}
+{% block body %}
+</ul>
+</nav>
+<article class="span9">
+  <p>
+    Etes-vous certain de vouloir supprimer ?
+  </p>
+  <form action="{{ path('AdminSupprimer', {'type':type,'id': id}) }}" method="post">
+    <input type="submit" value="Supprimer" class="btn btn-danger" />
+    {{ form_rest(form) }}
+  </form>
+ 
+{% endblock %}
